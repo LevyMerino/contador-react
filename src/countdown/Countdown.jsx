@@ -30,27 +30,29 @@ function Countdown() {
 
     if(elapsedSeconds >= targetSeconds && targetSeconds !== null){
         return (
-            <div>
-                <p> Se termino el conteo </p>
-                <button onClick={ () => setTargetSeconds(null) } >Reiniciar</button>
+            <div className="center-element">
+                <p> ¡Se termino el conteo!</p>
+                <div>
+                    <button className="mt-3 w-100 btn btn-primary" onClick={ () => setTargetSeconds(null) } >Reiniciar</button>                    
+                </div>
             </div>
         );
     }
 
     if (targetSeconds !== null) {
         return (
-            <div>
-                <p>Faltan: {targetSeconds - elapsedSeconds} y han trascurrido {elapsedSeconds} segundos </p>
+            <div className="center-element">
+                <span>Faltan <b>{targetSeconds - elapsedSeconds}</b>  y han trascurrido <b>{elapsedSeconds}</b> segundos </span>
             </div>
         );
     }
 
     return (
-        <div>
+        <div className="center-element">
             <p>¿Cuantos segundos quieres contar?</p>
             <form action="#" onSubmit={ev => parseForm(ev)}>
-                <input type='number' name="seconds"></input>
-                <button>Iniciar </button>
+                <input className="form-control" type='number' name="seconds"></input>
+                <button className="mt-3 w-100 btn btn-primary">Iniciar </button>
             </form>
         </div>
     );
