@@ -1,15 +1,11 @@
-
 import './App.css'
-import Counter from './Counter/Counter'
+import Countdown from './countdown/Countdown'
 
 function App() {
-
-
   return (
     <div className="App">
-      <Counter/>
+      <Countdown></Countdown>
 
-      
     </div>
   )
 }
